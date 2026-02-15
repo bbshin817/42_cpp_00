@@ -3,7 +3,7 @@ NAME	= phone_book
 CC		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-SRCS	=	megaphone.cpp
+SRCS	=	phone_book.cpp
 OBJS	= $(SRCS:.cpp=.o)
 
 all: $(NAME)
