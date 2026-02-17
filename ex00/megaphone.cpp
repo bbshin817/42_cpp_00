@@ -1,32 +1,19 @@
 #include <iostream>
+#include <cctype>
 
 int	main(int ac, char **av)
 {
-	int 					i;
-	std::string::size_type	li;
-	std::string				str;
-
-	i = 1;
 	if (1 < ac)
 	{
-		while (i < ac)
+		for (int i = 1; av[i]; i++)
 		{
-			str = av[i];
-			li = 0;
-			while (li < str.size())
-			{
-				if ('a' <= str[li] && str[li] <= 'z')
-					std::cout << (char)(str[li] + ('A' - 'a'));
-				else
-					std::cout << str[li];
-				li++;
-			}
-			i++;
+			for (int j = 0; av[i][j]; j++)
+				std::cout << (unsigned char)toupper(av[i][j]);
 		}
+		std::cout << std::endl;
 	}
 	else
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	std::cout << '\n';
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
 
 	return (0);
 }
